@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="index.js" defer></script>
+    <title>Calculadora</title>
+</head>
+<body>
+
+<!-- Header -->
+<div class="container">
+    <nav class="navbar navbar-expand-lg mb-5 mt-4">
+        <div class="container">
+    
+    
+        <img src="/img/logo.png" width="170" alt="logo">
+    
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Nutrición</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Planes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!-- /Header -->
+    
+    <!-- Calculator -->
+    <div class="card text-center">
+        
+        <!-- <div class="card-header">
+          Calculadora de calorías
+        </div> -->
+        <div class="card-body">
+
+          <h5 class="card-title" style="color:#6F4376" >Calculadora de calorías</h5>
+          <p class="card-text lead">Calcularemos las calorías necesarias en base a tu condición actual</p>
+    
+          <form class="row g-3 mt-3 needs-validation" id="calculadora" novalidate>
+            
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <label for="nombre" class="form-label"><strong>Nombre Completo</strong></label>
+                <input type="text" class="form-control" id="nombre"  required>
+                <div class="valid-feedback">
+                  Correcto
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label for="edad" class="form-label"><strong>Edad</strong></label>
+                <input type="number" class="form-control" id="edad" required min="15" max="80">
+                <div class="valid-feedback">
+                  Correcto
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label for="id" class="form-label"><strong>Identificación</strong></label>
+                <div class="input-group has-validation">
+              
+                  <input type="number" class="form-control" id="id" aria-describedby="inputGroupPrepend" required>
+                  <div class="invalid-feedback">
+                    Por favor ingrese su número de identificación
+                  </div>
+              
+              </div>
+              </div>
+            </div>
+
+
+            <div class="row justify-content-center">
+
+              <div class="col-md-3">
+                <label for="altura" class="form-label" min="50" max="300"><strong>Altura en cm</strong></label>
+                <input type="number" class="form-control" id="altura" required>
+                <div class="invalid-feedback">
+                  Indica tu altura
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <label for="peso" class="form-label" min="50" max="300"><strong>Peso en Kg</strong></label>
+                <input type="number" class="form-control altura" id="peso" required>
+                <div class="invalid-feedback">
+                  Indica tu peso
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <label for="actividad" class="form-label"><strong>Actividad física</strong></label>
+                <select class="form-select" id="actividad" required>
+                  <option selected disabled value="">Seleccione uno</option>
+                  <option value = "1.2">Poco o ningún ejercicio</option>
+                  <option value = "1.375">Ejercicio ligero (1 - 3 días a la semana)</option>
+                  <option value = "1.55">Ejercicio moderado (4 - 6 días a la semana)</option>
+                  <option value = "1.725">Ejercicio fuerte (7 - 9 días a la semana)</option>
+                  <option value = "1.9">Ejercicio muy fuerte (Dos veces al día)</option>
+                </select>
+                <div class="invalid-feedback">
+                  Seleccione una opción.
+                </div>
+              </div>
+              
+              <div class="col-md-3" >
+
+                <strong>Sexo</strong>
+
+                <div class="form-check" >
+                  <input class="form-check-input" id="genero" type="radio" value = "F" name="flexRadioDefault" id="genero" checked required>
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Femenino
+                  </label>
+                </div>
+                <!-- <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" required> -->
+
+                <div class="form-check">
+                  <input class="form-check-input" id="genero" value = "M" type="radio" name="flexRadioDefault" id="genero" required>
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    Masculino
+                  </label>
+
+                  <div class="invalid-feedback">
+                    Seleccione una opción.
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-12">
+              <button class="btn btn-primary" data-bs-toggle="collapse" href="#collapseData" aria-expanded="false" aria-controls="collapseData" style="background-color: #CDACDB; border: none; color: #6F4376;;" type="submit"><strong>Calcular</strong></button>
+            </div>
+          </form>
+
+
+        </div>
+        
+        <div class="collapse" id="collapseData">
+          <div class="card card-body" id="resultado">
+            <div class=" card-body d-flex flex-column justify-content-center align-items-center h-100" id="calculo">
+              
+              <p class="card-text lead">No hay suficientes datos para hacer el cálculo.</p>
+
+          </div>
+          </div>
+        </div>
+      </div>
+</div>
+<!-- /Calculator -->
+
+
+</body>
+</html>
